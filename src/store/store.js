@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { nanoid } from "nanoid";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 
 const DEFAULT_CARDS = [
     {
