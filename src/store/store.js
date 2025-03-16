@@ -6,7 +6,7 @@ const DEFAULT_CARDS = [
     {
       id: nanoid(),
       zIndex: 1,
-      posX: 50,
+      posX: 150,
       posY: 50,
       width: 300,
       height: 100,
@@ -16,7 +16,7 @@ const DEFAULT_CARDS = [
     {
       id: nanoid(),
       zIndex: 1,
-      posX: 200,
+      posX: 300,
       posY: 50,
       width: 300,
       height: 100,
@@ -26,7 +26,7 @@ const DEFAULT_CARDS = [
     {
       id: nanoid(),
       zIndex: 1,
-      posX: 350,
+      posX: 450,
       posY: 50,
       width: 300,
       height: 100,
@@ -36,7 +36,7 @@ const DEFAULT_CARDS = [
     {
       id: nanoid(),
       zIndex: 1,
-      posX: 500,
+      posX: 600,
       posY: 50,
       width: 300,
       height: 100,
@@ -46,7 +46,7 @@ const DEFAULT_CARDS = [
     {
       id: nanoid(),
       zIndex: 1,
-      posX: 650,
+      posX: 750,
       posY: 50,
       width: 300,
       height: 100,
@@ -88,7 +88,7 @@ const useStore = create(
 
                     cards: [
                         ...state.cards,
-                        { id: nanoid(), zIndex: 1, posX: 100, posY: 100, width: 300, height: 100, translatePosX: 0, translatePosY: 0 }
+                        { id: nanoid(), zIndex: 1, posX: 20, posY: 50, width: 300, height: 100, translatePosX: 0, translatePosY: 0 }
                     ],
                     }
                 })      

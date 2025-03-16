@@ -4,22 +4,22 @@ const useWebSocket = () => {
     const [transactions, setTransactions] = useState([]);
     const [socket, setSocket] = useState(null);
 
-    // Функція підключення до WebSocket
+   // Функція відкриття зєднання
     const connectWebSocket = () => {
-        if (socket) return; // Уникаємо повторного підключення
+        if (socket) return; 
 
         const newSocket = new WebSocket("wss://ws.blockchain.info/inv");
 
         newSocket.onopen = () => {
             console.log("WebSocket з'єднано");
-            newSocket.send(JSON.stringify({ op: "unconfirmed_sub" })); // Підписка на транзакції
+            newSocket.send(JSON.stringify({ op: "unconfirmed_sub" })); 
         };
 
         newSocket.onmessage = (event) => {
             const data = JSON.parse(event.data);
             if (data.op === "utx") {
                 console.log("Отримано транзакцію:", data.x);
-                setTransactions((prev) => [data.x, ...prev.slice(0, 9)]); // Оновлення списку (10 останніх)
+                setTransactions((prev) => [data.x, ...prev]); 
             }
         };
 
@@ -29,6 +29,7 @@ const useWebSocket = () => {
         setSocket(newSocket);
     };
 
+    // Функція завершення зєднання
     const closeWebSocket = () => {
         if (socket) {
             socket.close();

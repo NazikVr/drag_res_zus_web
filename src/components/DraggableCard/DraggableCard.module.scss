@@ -1,16 +1,22 @@
 .drag_handle {
     position: absolute;
-    cursor: move;
+    cursor: pointer;
+
+    &:active {
+      cursor: move;
+    }
 }
 .DraggableCard {
-  background: lightblue;
+  background: #101727;
   border: 2px solid #333;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
 }
 
 .DraggableCardContent {
+  text-wrap: balance;
   padding: 10px;
   width: 100%;
   height: 100%;
@@ -18,8 +24,23 @@
   flex-direction: row-reverse;
   justify-content: center;
   align-items: flex-start;
+  color: #fff;
+  font-size: 20px;
 }
 .DraggableCardDelete {
   cursor: pointer;
-  
+  margin-left: 5px;
+  font-size: 34px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #fff;
+  transition: all 0.5s ease;
+
+  &:hover {
+    display: block;
+    transform: rotate(360deg) scale(1.1);
+    color: red;
+
+    
+  }
 }

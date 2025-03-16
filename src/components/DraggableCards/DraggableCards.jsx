@@ -20,14 +20,14 @@ const DraggableCards = () => {
   
   return (
     <>
-      {cards?.map(({ id, zIndex, posX, posY, width, height, translatePosX, translatePosY }) => (
+      {cards?.map(({ id, zIndex, posX, posY, width, height, translatePosX, translatePosY}) => (
         <DraggableCard
           key={id}
           resizeCard={resizeCard}
           changeTransPos={changeTransPos}
           zIndex={zIndex}
-          x={posX}
-          y={posY}
+          posX={posX}
+          posY={posY}
           cardWidth={width}
           cardHeight={height}
           cardId={id}

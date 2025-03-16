@@ -6,8 +6,9 @@ import { ResizableBox } from "react-resizable";
 import Draggable from "react-draggable";
 import scss from "./DraggableCard.module.scss";
 
-const DraggableCard = ({ deleteCard, onClick, zIndex, x, y, cardId, resizeCard, cardWidth, cardHeight, translatePosX, translatePosY, changeTransPos }) => {
+const DraggableCard = ({ deleteCard, onClick, zIndex, posX, posY, cardId, resizeCard, cardWidth, cardHeight, translatePosX, translatePosY, changeTransPos }) => {
   const nodeRef = useRef(null);
+
 
   return (
     <Draggable
@@ -20,7 +21,7 @@ const DraggableCard = ({ deleteCard, onClick, zIndex, x, y, cardId, resizeCard, 
       <div
         ref={nodeRef}
         className={`drag-handle ${scss.drag_handle}`}
-        style={{ width: cardWidth, height: cardHeight, zIndex: zIndex, top: `${x}px`, left: `${y}px` }}
+        style={{ width: cardWidth, height: cardHeight, zIndex: zIndex, top: `${posX}px`, left: `${posY}px`  }}
         onClick={(e) => {
           e.stopPropagation();
           onClick();
@@ -39,7 +40,7 @@ const DraggableCard = ({ deleteCard, onClick, zIndex, x, y, cardId, resizeCard, 
         >
           <div className={scss.DraggableCardContent}>
             <div className={scss.DraggableCardDelete} onClick={() => deleteCard()}>&times;</div>
-            <div>Drag me, resize me, delete me, do what you want!</div>
+            <span>Drag me, resize me, delete me, do what you want!</span>
           </div>
         </ResizableBox>
       </div>
