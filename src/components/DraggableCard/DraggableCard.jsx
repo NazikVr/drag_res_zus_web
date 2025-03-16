@@ -26,12 +26,10 @@ const DraggableCard = ({ deleteCard, onClick, zIndex, posX, posY, cardId, resize
           e.stopPropagation();
           onClick();
         }}
-        onTouchStart={
-          (e) => {
-            e.stopPropagation();
-            onClick();
-          }
-        }
+        onPointerDown={(e) => {
+          e.stopPropagation();
+          onClick();
+        }}
       >
         <ResizableBox
           width={cardWidth}
