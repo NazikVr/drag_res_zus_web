@@ -26,7 +26,7 @@ const DraggableCard = ({ deleteCard, onClick, zIndex, posX, posY, cardId, resize
           e.stopPropagation();
           onClick();
         }}
-        onTouchEnd={
+        onTouchStart={
           (e) => {
             e.stopPropagation();
             onClick();
@@ -45,7 +45,7 @@ const DraggableCard = ({ deleteCard, onClick, zIndex, posX, posY, cardId, resize
           className={scss.DraggableCard}
         >
           <div className={scss.DraggableCardContent}>
-            <div className={scss.DraggableCardDelete} onClick={() => deleteCard()} onTouchEnd={() => deleteCard()}>&times;</div>
+            <div className={scss.DraggableCardDelete} onClick={() => deleteCard()} onTouchStart={() => deleteCard()}>&times;</div>
             <span>Drag me, resize me, delete me, do what you want!</span>
           </div>
         </ResizableBox>
