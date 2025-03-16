@@ -1,11 +1,10 @@
-import Image from "next/image";
-import DraggableCards from "../components/DraggableCards/DraggableCards"
+import DraggableCards from "../src/components/DraggableCards/DraggableCards";
+import  ListRender  from "../src/components/ListRender/ListRender";
 export default function Home() {
-
-  
   return (
-<>
-<DraggableCards />
-</>
+    <>
+      {/* <DraggableCards /> */}
+      <ListRender />
+    </>
   );
 }

@@ -3,7 +3,6 @@
 
 import scss from "./DraggableCards.module.scss";
 import DraggableCard from "../DraggableCard/DraggableCard";
-import Button from "../Button/Button"
 import DraggableBtns from "../DraggableBtns/DraggableBtns"
 import useStore from "../../store/store";
 
@@ -24,12 +23,6 @@ const DraggableCards = () => {
       {cards?.map(({ id, zIndex, posX, posY, width, height, translatePosX, translatePosY }) => (
         <DraggableCard
           key={id}
-          onClick={() => {
-            handleClick(id);
-          }}
-          deleteCard={() => {
-            deleteCard(id);
-          }}
           resizeCard={resizeCard}
           changeTransPos={changeTransPos}
           zIndex={zIndex}
@@ -40,20 +33,16 @@ const DraggableCards = () => {
           cardId={id}
           translatePosX={translatePosX}
           translatePosY={translatePosY}
+          onClick={() => {
+            handleClick(id);
+          }}
+          deleteCard={() => {
+            deleteCard(id);
+          }}
         />
       ))}
-            <Button
-        action={() => {
-          newCard();
-        }}
-        text={"Add new card!"}
-      />
-      <Button
-        action={() => {
-          resetCards();
-        }}
-        text={"Reset All!"}
-      />
+
+      <DraggableBtns resetCards={resetCards} newCard={newCard} />
     </>
   );
 };
