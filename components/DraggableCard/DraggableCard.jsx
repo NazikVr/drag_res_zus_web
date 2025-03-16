@@ -13,8 +13,7 @@ const DraggableCard = ({ deleteCard, onClick, zIndex, x, y, cardId, resizeCard, 
     <Draggable
       nodeRef={nodeRef}
       position={{ x: translatePosX, y: translatePosY }}
-      onDrag={(e, data) => changeTransPos(cardId, data.x, data.y)
-      }
+      onDrag={(e, data) => changeTransPos(cardId, data.x, data.y)}
       handle=".drag-handle"
       cancel=".react-resizable-handle"
     >
