@@ -1,7 +1,7 @@
 "use client";
 
 import  { useState } from "react";
-import useWebSocket from "../../hooks/";
+import useWebSocket from "../../hooks/useWebSocket";
 import WebSocketControls from "../WebSocketControls/WebSocketControls";
 import TransactionList from "../TransactionList/TransactionList";
 import scss from "./ListRender.module.scss"
