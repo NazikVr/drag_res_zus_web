@@ -1,9 +1,7 @@
 "use client";
 
-
-import scss from "./DraggableCards.module.scss";
 import DraggableCard from "../DraggableCard/DraggableCard";
-import DraggableBtns from "../DraggableBtns/DraggableBtns"
+import DraggableBtns from "../DraggableBtns/DraggableBtns";
 import useStore from "../../store/store";
 
 const DraggableCards = () => {
@@ -14,35 +12,45 @@ const DraggableCards = () => {
     resetCards,
     newCard,
     resizeCard,
-    changeTransPos
+    changeTransPos,
   } = useStore();
 
-  
   return (
     <>
-      {cards?.map(({ id, zIndex, posX, posY, width, height, translatePosX, translatePosY}) => (
-        <DraggableCard
-          key={id}
-          resizeCard={resizeCard}
-          changeTransPos={changeTransPos}
-          zIndex={zIndex}
-          posX={posX}
-          posY={posY}
-          cardWidth={width}
-          cardHeight={height}
-          cardId={id}
-          translatePosX={translatePosX}
-          translatePosY={translatePosY}
-          onClick={() => {
-            handleClick(id);
-          }}
-          deleteCard={() => {
-            deleteCard(id);
-          }}
-        />
-      ))}
+        {cards?.map(
+          ({
+            id,
+            zIndex,
+            posX,
+            posY,
+            width,
+            height,
+            translatePosX,
+            translatePosY,
+          }) => (
+            <DraggableCard
+              key={id}
+              resizeCard={resizeCard}
+              changeTransPos={changeTransPos}
+              zIndex={zIndex}
+              posX={posX}
+              posY={posY}
+              cardWidth={width}
+              cardHeight={height}
+              cardId={id}
+              translatePosX={translatePosX}
+              translatePosY={translatePosY}
+              onClick={() => {
+                handleClick(id);
+              }}
+              deleteCard={() => {
+                deleteCard(id);
+              }}
+            />
+          )
+        )}
 
-      <DraggableBtns resetCards={resetCards} newCard={newCard} />
+        <DraggableBtns resetCards={resetCards} newCard={newCard} />
     </>
   );
 };

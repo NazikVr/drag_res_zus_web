@@ -5,6 +5,8 @@
 }
 
 body {
+  overflow-x: hidden;
+
   background: rgb(130, 103, 45);
   background: -moz-linear-gradient(
     90deg,
@@ -28,6 +30,8 @@ body {
     rgba(52, 132, 148, 1) 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#82672d",endColorstr="#348494",GradientType=1);
+  
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .react-resizable-handle {

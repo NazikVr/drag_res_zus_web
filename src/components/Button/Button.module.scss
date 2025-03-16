@@ -39,7 +39,30 @@
 
   &:hover {
     transform: scale(1.1);
-    color: rgba(19, 199, 94, 0.801);
-    background-color: rgb(214, 214, 16);
+    color: rgb(214, 214, 16);
+    background-color: #fff;;
   }
 }
+
+.black {
+  color: #fff;
+  background-color: #000;
+
+  &:hover {
+    transform: scale(1.1);
+    color: #000;
+    background-color: #fff;
+  }
+}
+
+.white {
+  color: #000;
+  background-color: #fff;
+
+  &:hover {
+    transform: scale(1.1);
+    color: #000;
+    background-color: #fff;
+  }
+}
+
