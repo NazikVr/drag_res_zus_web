@@ -1,7 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { nanoid } from "nanoid";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 
 const DEFAULT_CARDS = [
     {
@@ -58,7 +57,7 @@ const DEFAULT_CARDS = [
 
 const useStore = create(
     persist(
-        (set, get) => ({
+        (set) => ({
             cards: JSON.parse(localStorage.getItem("cards-storage"))?.state?.cards || [...DEFAULT_CARDS],
 
             handleClick: (id) => {
