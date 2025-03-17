@@ -35,7 +35,7 @@ const DraggableCard = ({ deleteCard, onClick, zIndex, posX, posY, cardId, resize
           width={cardWidth}
           height={cardHeight}
           minConstraints={[300, 100]}
-          maxConstraints={[400, 300]}
+          // maxConstraints={[600, 300]}
           axis="both"
           onResizeStop={(e, data) =>
             resizeCard(cardId, data.size.width, data.size.height)
