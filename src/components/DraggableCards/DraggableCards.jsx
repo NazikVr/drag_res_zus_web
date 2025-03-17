@@ -19,6 +19,7 @@ const DraggableCards = () => {
     <>
         {cards?.map(
           ({
+            number,
             id,
             zIndex,
             posX,
@@ -29,6 +30,7 @@ const DraggableCards = () => {
             translatePosY,
           }) => (
             <DraggableCard
+              number={number}
               key={id}
               resizeCard={resizeCard}
               changeTransPos={changeTransPos}

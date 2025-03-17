@@ -4,6 +4,7 @@ import { nanoid } from "nanoid";
 
 const DEFAULT_CARDS = [
     {
+      number: 1,
       id: nanoid(),
       zIndex: 1,
       posX: 150,
@@ -14,6 +15,7 @@ const DEFAULT_CARDS = [
       translatePosY: 0,
     },
     {
+      number: 2,
       id: nanoid(),
       zIndex: 1,
       posX: 300,
@@ -24,6 +26,7 @@ const DEFAULT_CARDS = [
       translatePosY: 0,
     },
     {
+      number: 3,
       id: nanoid(),
       zIndex: 1,
       posX: 450,
@@ -34,6 +37,7 @@ const DEFAULT_CARDS = [
       translatePosY: 0,
     },
     {
+      number: 4,
       id: nanoid(),
       zIndex: 1,
       posX: 600,
@@ -44,6 +48,7 @@ const DEFAULT_CARDS = [
       translatePosY: 0,
     },
     {
+      number: 5,
       id: nanoid(),
       zIndex: 1,
       posX: 750,
@@ -84,11 +89,12 @@ const useStore = create(
 
             newCard: () => {
                 set((state) => {
+                    const maxNum = Math.max(...state.cards.map((card) => card.number)) + 1;
                     return {
 
                     cards: [
                         ...state.cards,
-                        { id: nanoid(), zIndex: 1, posX: 20, posY: 50, width: 300, height: 100, translatePosX: 0, translatePosY: 0 }
+                        { number: maxNum, id: nanoid(), zIndex: 1, posX: 20, posY: 50, width: 300, height: 100, translatePosX: 0, translatePosY: 0 }
                     ],
                     }
                 })      
